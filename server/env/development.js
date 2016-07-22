@@ -1,8 +1,8 @@
 module.exports = {
-    // "DATABASE_URI": "postgres://localhost:5432/fsg",
-    // "SESSION_SECRET": "Optimus Prime is my real dad",
-    "DATABASE_URI": "postgres://gyeqnrrwoeqxvq:TBUuGuxuTUfNLLbWEnt6wEN30y@ec2-107-20-136-222.compute-1.amazonaws.com:5432/dtdqtnu33knt5",
-    "SESSION_SECRET": "Essence729",
+    "DATABASE_URI": "postgres://localhost:5432/fsg",
+     "SESSION_SECRET": "Optimus Prime is my real dad",
+    // "DATABASE_URI": "postgres://gyeqnrrwoeqxvq:TBUuGuxuTUfNLLbWEnt6wEN30y@ec2-107-20-136-222.compute-1.amazonaws.com:5432/dtdqtnu33knt5",
+    // "SESSION_SECRET": "Essence729",
     "TWITTER": {
         "consumerKey": "t6Ue52sQt5kTH4EgOqF0k9Y1K",
         "consumerSecret": "u5UcVVano15nzdTYoGOejgbzgAlR6MoNW1YxDIQUvrCEmmUoCx",
