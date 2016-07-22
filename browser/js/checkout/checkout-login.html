@@ -1,0 +1,57 @@
+<section id="checkout-login">
+	<div class="container">
+		<div class="row">
+				<h1>Check<strong>out</strong></h1>
+
+			<div class="signin-options" ng-show="session">
+			
+				<h3>Welcome back, <strong>{{session.firstName}}</strong>!</h3>
+				<p> Would you like to continue with this account?</p><br>
+				<a ui-sref="checkoutpay">
+					<button type="submit" class="btn btn-default">Continue</button>
+				</a>
+				<a ui-sref="login">
+					<button type="submit" class="btn btn-default">Sign in as another user</button>
+				</a>
+			</div>
+
+			<div ng-show="!session">
+				<!-- <div id="signin" class="col-sm-6 col-md-6 col-lg-6"> -->
+				<div class="signin-options col-sm-6 col-md-6 col-lg-6">
+
+					<h3>Returning <Strong>Customers</Strong></h3>
+					<form id="login-form" name="loginForm" ng-submit="loginForm.$valid && sendLogin(login)" >
+					    <alert type="danger" ng-show="error">
+					        {{ error }}
+					    </alert>
+					    <div class="form-group">
+					        <label for="email">Email address</label>
+					        <input type="text" ng-model="login.email" class="form-control" id="email" placeholder="Enter email">
+					    </div>
+					    
+					    <div class="form-group">
+					        <label for="login-password">Password</label>
+					        <input type="password" ng-model="login.password" class="form-control" id="login-password" placeholder="Password">
+					    </div>
+				
+					    <button id="login-btn" type="submit" class="btn btn-default">Login</button>
+				
+					</form>
+				</div>
+
+				<!-- <div id="guest" class="col-sm-6 col-md-6 col-lg-6"> -->
+				<div class="signin-options col-sm-6 col-md-6 col-lg-6">
+
+					<h3>Checkout as <strong>Guest</strong></h3>
+					<p>To proceed to checkout as a guest, you can create an account.</p>
+
+					<a ui-sref="checkoutpay({cartItems:cartData})">
+					<button id="guest-btn" type="submit" class="btn btn-default">Guest</button>
+					</a>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</section>
+ 

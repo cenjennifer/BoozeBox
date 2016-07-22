@@ -1,0 +1,20 @@
+<div>
+<h2 class="text-center"><strong>{{question.title}}</strong></h2>
+<div class="answers">
+	<div class="ans"
+		ng-class="{
+			image:answer.image,
+			selected:isSelected($parent.$index, $index)
+		}"
+		ng-style="{ 'background-image': 'url({{answer.image}})','background-size': 'cover' }"
+		ng-click="answerQuestion(answer)"
+		ng-repeat="answer in question.answers"
+		>
+		<div class="transparent">
+		<h4>
+		{{ answer.text }}
+		</h4>
+		</div>
+	</div>
+	</div>
+</div>

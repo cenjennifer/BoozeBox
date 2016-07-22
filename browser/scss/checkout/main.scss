@@ -1,0 +1,100 @@
+/* checkout-login CSS */
+#checkout-login {
+    h1 {
+        font-family: 'Arvo', serif;
+        color: white;
+    }
+    h3 {
+        font-family: 'Arvo', serif;
+    }
+}
+
+.signin-options {
+    color: white;
+    padding: 2% 2% 2% 2%;
+    margin: 0 5% 5% 5%;
+    background: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 40%;
+    border-radius: 25px;
+    #login-form {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        #login-btn {
+            width: 50%;
+            margin-right: 25%;
+            margin-left: 25%;
+        }
+    }
+}
+
+#guest {
+    color: white;
+    padding: 2%;
+    margin: 5%;
+    background: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 40%;
+    border-radius: 25px;
+    p {
+        font-size: 18px;
+    }
+    #guest-btn {
+        width: 50%;
+        margin-right: 25%;
+        margin-left: 25%;
+    }
+}
+
+
+/* customerinfo CSS */
+
+#customerinfo {
+    h1 {
+        color: black;
+    }
+    h2 {
+        font-family: 'Arvo', serif;
+    }
+    h4 {
+        font-family: 'Arvo', serif;
+    }
+    p {
+        font-size: 15px;
+    }
+    form {
+        padding: 0;
+        margin: 0;
+    }
+    #headerLine {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        border-bottom: 3px solid #ccc;
+    }
+    .customerInfo{
+        padding-top:10px;
+    }
+    button{
+        margin-top:10px;
+    }
+}
+
+.checkout-style {
+    background-color: white;
+    margin-bottom: 40px;
+    opacity: .95;
+    border-radius: 20px;
+    min-height: 550px;
+    border-radius: 25px;
+}
+
+#checkout-cart {
+    p {
+        font-size: 16px;
+    }
+}
+#thankyou{
+    text-align: center;
+}

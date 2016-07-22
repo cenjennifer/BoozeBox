@@ -1,0 +1,44 @@
+$yellow: #E3B000;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fdfdfd;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+#main {
+  padding-top: 40px;
+  margin: 0 auto;
+}
+
+.clear {
+  clear:both;
+}
+
+@import 'checkout/main';
+@import 'directives/main';
+@import 'home/main';
+@import 'about/main';
+@import 'tutorial/main';
+@import 'login/main';
+@import 'boxes/main';
+@import 'quiz/main';
+@import 'box/main';
+@import 'over21/main';
+@import 'font-awesome/font-awesome.scss';
+@import 'boxes/main';
+@import 'checkout-cart/main';
+@import 'signup/main';
+@import 'search/main';
+@import 'plans/main';

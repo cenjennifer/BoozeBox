@@ -1,0 +1,18 @@
+<section id='quiz' class='container'>
+	<h1 class='text-center'>Let us mix your <strong>perfect</strong> drink!</h1>
+	<div class="quiz-progress">
+		<div ng-repeat="question in quiz.questions | limitTo: 4" ng-if="$index < 5" class="
+		{{ ($index === activeQuestion()) ? 'on' : 'off' }}
+		{{ (question.questionState === 'answered') ? 'answered' : 'unanswered' }}
+		"></div>
+	</div>
+	<div ng-show="activeQuestion() < 0">
+		<button class="btn center-block takequiz" ng-click="switchQuestion()">Take the Quiz!</button>
+	</div>
+	<div class="question
+					{{ ($index === activeQuestion()) ? 'active' : 'inactive' }}
+					{{ (question.questionState) === 'answered' ? 'answered' : 'unanswered' }}"
+					ng-repeat="question in quiz.questions">
+			<quiz-question ng-show="$index === activeQuestion()" question="question"></quiz-question>
+	</div>
+</section>

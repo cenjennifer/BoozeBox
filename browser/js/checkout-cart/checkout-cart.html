@@ -1,0 +1,56 @@
+<section id="checkout-cart">
+    <div class="container">
+        <div class="row" id="mainCartContainer">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h1>Shopping Cart</h1>
+                <div class="row table-columns">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <h3>Box Name</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Quantity<h3>
+                    </div>
+                    <div class="col-md-2">
+                      <h3>Price</h3>
+                    </div>
+                </div>
+                <div ng-repeat="cartItemObj in cartItemsStuff track by $index" class="row cartItems">
+                    <div class="col-md-12">
+                        <div class="col-md-2">
+                            <img src="https://cdn.shopify.com/s/files/1/0252/8179/products/Citrus_Blossom_Sour_w_Peach_small.png?v=1462288632">
+                        </div>
+                        <div class="col-md-5">
+                            <br>
+                            <h4>Individual Box: {{cartItemObj.data.name}}</h4>
+                        </div>
+                        <div class="col-md-2">
+                            <br>
+                            <input id="checkoutinput" ng-model="cartItemObj.data.boxQuantity" size="2" ng-change="itemQuantityChanged($index)">
+                        </div>
+                        <div class="col-md-2">
+                            <br>
+                            <h4 id="price">${{ price * cartItemObj.data.boxQuantity || 0 | number:2}}</h4>
+                            <button ng-click="updateCartItem($index, cartItemObj.data.boxQuantity)" ng-show="updateCartBoolean[$index]" class="btn btn-primary">Update</button>
+                        </div>
+                        <div class="col-md-1">
+                            <br>
+                            <i ng-click="updateCartItem($index, null)" class="fa fa-times" aria-hidden="true"></i>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="row">
+                <div class="col-md-9"></div>
+                <div class="col-md-3">
+                    <button ui-sref="checkoutlogin({cartItems: cartItemsStuff})" ng-show="cartItemsStuff.length" class="btn btn-info">CHECKOUT   <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+</section>

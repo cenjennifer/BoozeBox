@@ -1,0 +1,38 @@
+<section id="over21">
+    <div class="ageContainer">
+        <form name="checkOver21Form" ng-submit="checkAge(monthSelected, dateSelected, yearSelected)">
+            <fieldset>
+                <legend>Enter Your Birthday</legend>
+                <div class="inputDivs">
+                    <div>
+                        <label>Month</label>
+                        <!-- <select ng-model="monthSelected" 
+                        		class="form-control" 
+                        		required 
+                        		style="display:block">
+                            <option ng-repeat="month in months">{{month}}</option>
+                            </select> -->
+                        <input class=form-control type=text ng-model=monthSelected autocomplete=off uib-typeahead="month for month in months | filter:$viewValue" placeholder="January" required>
+                    </div>
+                    <div>
+                        <label>Day</label>
+                        <input ng-model="dateSelected" name="date" class="form-control" type="number" size="2" min="1" max="31" placeholder="1" required>
+                    </div>
+                    <div>
+                        <label>Year</label>
+                        <input ng-model="yearSelected" name="year" size="4" min="1916" max="2016" class="form-control" type="number" placeholder="2016" required> 
+                    </div>
+              
+                    <div ng-show="checkOver21Form.year.$error.max || checkOver21Form.year.$error.min && checkOver21Form.year.$dirty && checkOver21Form.year.$viewValue.length >= 4">Please enter a valid year.</div>
+
+                    <div ng-show="checkOver21Form.date.$error.min || checkOver21Form.date.$error.max && checkOver21Form.date.$dirty">Please enter a valid day.</div>
+                </div>
+                <div class="form-group formButtonDiv">
+                    <div class="col-xs-10 col-xs-offset-2">
+                        <button ng-disabled="checkOver21Form.$invalid" type="submit" class="btn btn-success">Enter  <i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    <div>
+</section>

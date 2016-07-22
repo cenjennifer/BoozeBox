@@ -1,0 +1,39 @@
+<nav class="navbar navbar-static-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11">
+                <div class="navbar-header">
+                    <div id="logo" ui-sref="home"><span class="light">Booze</span><strong>Box</strong></div>
+                </div>
+                <div ng-show="checkedAge">
+                    <ul class="nav navbar-nav">
+                        <li ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
+                            <a ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
+                        </li>
+                    </ul>
+                    <button ui-sref="cart" class="btn login-button"><span style="margin-right:5px"><i class="fa fa-shopping-cart"></i></span>Cart<span style="margin-left:5px"><b>{{countItems}}</b></span></button>
+                    <button ng-click="login()" ng-show="!user" ui-sref="login" class="btn login-button">Login</button>
+                    <button ng-show="!user" ui-sref="signup" class="btn login-button">Signup</button>
+                    <div ng-click="logout()" ng-show="user" class="welcome">
+                        <span>Welcome, {{ user.email }}!</span>
+                        <a ng-click="logout()">Logout</a>
+                    </div>
+                    <div class="col-md-1">
+                        <div ng-click="search()" class="searchButton"><i class="fa fa-search"></i></div>
+                    </div>
+                </div>
+            </div>
+</nav>
+<div class="row searchBarContainer" ng-show="searchActive">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" id="searchBar">
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <input placeholder="e.g. lime, bacon, coconut" ng-model="searchQuery" ng-Enter=searchProducts(searchQuery)></input>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info">SEARCH</button>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>

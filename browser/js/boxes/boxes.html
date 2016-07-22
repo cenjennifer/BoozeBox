@@ -1,0 +1,14 @@
+<section id="boxes">
+  <div class="row">
+    <div class="lifestyle" ng-repeat="lifestyle in lifestylesBoxes">
+      <h1 id="{{lifestyle.name}}"><strong>{{ lifestyle.name }}</strong></h1>
+      <div class="col-md-4" ng-repeat="box in lifestyle.boxes">
+        <a ui-sref="box({boxId: box.id})">
+        <h3>{{ box.name }}</h3>
+        <div class="box_photo_container" style="height:300px; overflow: hidden;"><img src="{{box.photo}}"  style="height:100%" class="box_photo"></div>
+        </a>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</section>

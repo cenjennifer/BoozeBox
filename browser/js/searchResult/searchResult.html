@@ -1,0 +1,20 @@
+<section id="search">
+  <div class="row">
+    <h1>Search Results</h1>
+    <div ng-show="noResults">
+                        <h3>We cannot find any boxes that match your search: <b>{{searchString}}</b></h2>
+                        <!-- create a search bar directive? -->
+                        <!-- Recommendation/Random -->
+                        <h2>Check out some of our other boxes that might interest you!</h2>
+    </div>
+    
+      <div class="col-md-4" ng-repeat="box in matchedBoxes">
+        <a ui-sref="box({boxId: box.id})">
+        <h3>{{ box.name }}</h3>
+        <div class="box_photo_container"><img src="{{box.photo}}" class="box_photo"></div>
+        </a>
+      </div>
+      <div class="clear"></div>
+ 
+  </div>
+</section>

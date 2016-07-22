@@ -1,0 +1,33 @@
+<section id="box">
+    <div class="row">
+        <form class="form-horizontal" novalidate name="editBoxFrom" ng-submit="editBox()">
+            <div class="col-md-6">
+                <img src="{{box.photo}}">
+            </div>
+            <div class="col-md-6">
+                <h1>{{ box.name }}</h1>
+                <div class="description" contenteditable="false" ng-hide="user.isAdmin" only-text="true" ng-model="editedBox.description" name="description" only-text="true" convert-new-lines="true">
+                    <p>{{ box.description }}</p>
+                </div>
+                <div class="description" contenteditable="true" ng-show="user.isAdmin" only-text="true" ng-model="editedBox.description" name="description" only-text="true" convert-new-lines="true">
+                    <p>{{ box.description }}</p>
+                </div>
+                <div ng-show="user.isAdmin">
+                    <button type="submit" id="submit_changes" ng-disabled="editBoxForm.$invalid" ng-show="user.isAdmin">Submit Changes</button>
+                </div>
+                <ul>
+                    <li ng-repeat="product in box.products">{{ product.name }} <span ng-show="user.isAdmin" ng-click="removeProduct(product.id)" class="glyphicon glyphicon-remove"></li>
+          <li ng-show="user.isAdmin">
+            <input type="text" placeholder="Add a product" ng-model="productName" name="productName"><span class="glyphicon glyphicon-plus" ng-click="addProduct(productName)"></span>
+                    </li>
+                </ul>  
+          </form>
+                
+                <button ng-click="addToCart(box.id, quantity)" class="addToCart">Add To Cart</button>
+                <input ng-model="quantity" type="number" name="quantity" min="1" max="10" class="quantity" value="1">
+                <span id="addedToCart" ng-show="boxToBeAdded">Added To Cart</span>
+                <span id="invalidQuantity" ng-show="boxNullMsg">Invalid Quantity</span>
+            </div>
+
+    </div>
+</section>

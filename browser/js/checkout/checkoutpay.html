@@ -1,0 +1,106 @@
+<section id="customerinfo">
+    <div class="container">
+        <div class="row">
+            <h1>Check<strong>out</strong></h1>
+            <div id="headerLine"></div>
+            <div id='checkout-form' class="checkout-style col-md-8">
+                <!-- <pre>{{userData|json}}</pre> -->
+                <form name="userInfo">
+                    <h2>Customer<strong>Info</strong></h2>
+                    <div ng-show="user">
+                        <h3>Okay, {{userData.firstName}}. Let's check some things out.</h3>
+                        <p>Please verify the information that we have about you below.</p>
+                    </div>
+                    <div ng-show="!user">
+                        <h3>Let's get started!</h3>
+                        <p>Let's fill out some information.</p>
+                    </div>
+                    <div class="customerInfo" id="personal">
+                        <h4>Personal</h4>
+                        <p>
+                            First Name:
+                            <input require type="text" ng-model="userData.firstName" />
+                            <br> Last Name:
+                            <input require type="text" ng-model="userData.lastName" />
+                            <br> Email:
+                            <input require type="text" ng-model="userData.email" />
+                            <br> Birthday:
+                            <input require type="text" ng-model="userData.birthday" ng-show="userData.birthday" />
+                            <br>
+                            <input require type="date" ng-model="userData.birthday" ng-show="!userData.birthday" />
+                            <p ng-hide="userData.password">
+                                Password:
+                                <input type="password" ng-model="userData.password" required />
+                            </p>
+                        </p>
+                    </div>
+                    <div class="customerInfo" id="billingPayment">
+                        <h4>Billing Information</h4>
+                        <p>
+                            Billing First Name:
+                            <input require type="text" ng-model="userData.cc_fname" />
+                            <br> Billing Last Name:
+                            <input require type="text" ng-model="userData.cc_lname" />
+                            <br> Credit Card Number:
+                            <input require type="number" ng-model="userData.cc_number" />
+                            <br> Credit Card CVV:
+                            <input require type="number" ng-model="userData.cc_cvv" />
+                            <br> Credit Card Expiration:
+                            <input require type="date" ng-model="userData.cc_expiration" />
+                        </p>
+                    </div>
+                    <div class="customerInfo" id="billingAddress">
+                        <h4>Billing Address</h4>
+                        <p>
+                            Street Address:
+                            <input require type="text" ng-model="userData.cc_streetaddress" />
+                            <br> Zipcode:
+                            <input require type="text" ng-model="userData.cc_zipcodeaddress" />
+                            <br> City:
+                            <input require type="text" ng-model="userData.cc_cityaddress" />
+                            <br> State:
+                            <input require type="text" ng-model="userData.cc_stateaddress" />
+                            <br> Country:
+                            <input require type="text" ng-model="userData.cc_countryaddress" />
+                        </p>
+                    </div>
+                    <div class="customerInfo" id="shippingAddress">
+                        <h4>Shipping Address</h4>
+                        <p>
+                            Same as Billing Address?
+                            <input type="checkbox" ng-model="shippingOptions.same_as_billing" />
+                            <br> Street Address:
+                            <input type="text" ng-model="userData.street_address" ng-required="!shippingOptions.same_as_billing" />
+                            <br> Zipcode:
+                            <input type="text" ng-model="userData.zipcode_address" ng-required="!shippingOptions.same_as_billing" />
+                            <br> City:
+                            <input type="text" ng-model="userData.city_address" ng-required="!shippingOptions.same_as_billing" />
+                            <br> State:
+                            <input type="text" ng-model="userData.state_address" ng-required="!shippingOptions.same_as_billing" />
+                            <br> Country:
+                            <input type="text" ng-model="userData.country_address" ng-required="!shippingOptions.same_as_billing" />
+                        </p>
+                    </div>
+                    <div class="customerInfo" id="shippingOption">
+                        <h4>Shipping Options</h4>
+                        <p>
+                            <select require ng-model="shippingOptions.options">
+                                <option>Within 5 Business Days</option>
+                                <option>7-10 Business Days</option>
+                                <option>10-14 Business Days</option>
+                            </select>
+                        </p>
+                    </div>
+                    <!-- <a ui-sref="customershipping"> -->
+                    
+                    <button class="btn btn-default" ng-click='userInfo.$valid && shippingOptions.options && submitData(userData, shippingOptions, cartItems, dateNow)'>Confirm Order</button>
+                    <error ng-show="errMessage" style="color:red"><strong>{{errMessage}}</strong></error>
+                   
+
+                    <!-- </a> -->
+                </form>
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+        </div>
+    </div>
+</section>

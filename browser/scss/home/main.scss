@@ -1,0 +1,119 @@
+// #home {
+//   h1 {
+//   	font-family: 'Arvo', serif;
+//   	font-size: 5em;
+//     margin-top: 40px;
+//     text-align: center;
+//     font-weight: bold;
+//     color: white;
+//     text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+//                  0px -5px 35px rgba(255,255,255,0.3);
+//   }
+//   h2 {
+//   font-family: 'Arvo', serif;
+//   font-size: 3em;
+//   color: white;
+//     text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+//                  0px -5px 35px rgba(255,255,255,0.3);
+//   }
+
+// }
+
+// body {
+// 	background: url('https://s3.amazonaws.com/cratejoy_vendor_images/saloonboxdiycocktailkit/tasty/images/saloon_boxs_photos-84.png') no-repeat center center fixed;
+//   height:100%;
+//   background-size: cover;
+//   background-attachment: fixed;
+// }
+
+// #transparent {
+// 	margin: 0 auto;
+// 	background: rgba(0, 0, 0, 0.3);
+// 	height: 90%;
+// 	width: 90%;
+// 	border-radius: 25px;
+// }
+
+$blue: #2C3E50;
+$yellow: #E3B000;
+#home {
+    h1 {
+        font-family: 'Arvo', serif;
+        font-size: 5em;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    }
+    h2 {
+        font-family: 'Arvo', serif;
+        font-size: 3em;
+        color: white;
+        text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    }
+    .home_container {
+        max-width: 100%;
+        width: 100%;
+        min-height: 800px;
+        margin-top: -40px;
+        position: relative;
+    }
+    .home_container#explore_boxes {
+        background: url('https://s3.amazonaws.com/cratejoy_vendor_images/saloonboxdiycocktailkit/tasty/images/saloon_boxs_photos-84.png') no-repeat center center;
+        background-size: cover;
+        h1 {
+            margin: 10% auto 4%;
+        }
+        .text {
+            text-align: center;
+        }
+        .overlay {
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.02);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .home_container#take_quiz {
+        background: url('http://static1.squarespace.com/static/56de6aad7da24fe7b77c26b8/56de6c5bf699bb1108958eee/575505b6c6fc08d41e657f4a/1465827010577/Nolen+negroni+3.jpg');
+        background-size: cover;
+        .text {
+            padding-top: 8%;
+            color: #fff;
+        }
+        h1 {
+            color: white;
+            text-shadow: none;
+            margin-bottom: 40px;
+        }
+        h3 {
+            color: white;
+            font-weight: 300;
+            font-size:2.5em;
+            margin-bottom: 5%;
+        }
+        .overlay {
+            margin: 0 auto;
+            background: rgba(44, 62, 80, 0.8);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .text {
+        text-align: center;
+    }
+    .white_button {
+        border: none;
+        background-color: white;
+        padding: 12px 19px;
+        color: #2C3E50;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+}
